@@ -1,0 +1,7 @@
+{
+  "name": "login-guard-p",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
