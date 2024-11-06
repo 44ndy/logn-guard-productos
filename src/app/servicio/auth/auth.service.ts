@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UsuarioLogeado } from 'src/app/interfaces/UsuarioLogeado';
 import { CuerpoLogin } from 'src/app/interfaces/CuerpoLogin';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +17,8 @@ export class AuthService {
 
   constructor(
 
-    private http: HttpClient
+    private http: HttpClient,
+   private router : Router
   ) {
 
 
@@ -40,6 +42,9 @@ export class AuthService {
         this.accessToken = resultado.accessToken
         this.$cargando.next(false);
         console.log(resultado)
+        this.router.navigate(['/','productos'])
+
+
       })
 
   }
